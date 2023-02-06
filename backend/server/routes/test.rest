@@ -1,0 +1,15 @@
+//Get all courses 
+###
+GET http://localhost:8081/course/getAllCourses
+Content-Type: application/json
+
+//Create a Course
+###
+POST http://localhost:8081/posts/createCourse
+Content-Type: application/json 
+
+{
+    "title" : "Dog 2",
+    "description": "I am a testing body in .rest"
+    
+}
