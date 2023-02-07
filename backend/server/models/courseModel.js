@@ -28,6 +28,7 @@ const newCourseSchema = new mongoose.Schema(
             type: Date,
             default: Date.now,
         },
+        
          /* use navlink to route courses to topics
         topic:{
             type:String,

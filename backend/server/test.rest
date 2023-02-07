@@ -22,6 +22,15 @@ GET http://localhost:8081/user/getAll
 Content-Type: application/json
 
 ###
+POST http://localhost:8081/course/createCourse
+Content-Type: application/json
+
+{
+    "title" : "testTitle",
+    "description" : "testDescription"
+}
+
+###
 
 POST http://localhost:8081/user/editUser
 Content-Type: application/json 
@@ -50,3 +59,13 @@ Content-Type: application/json
 
 ###
 POST  http://localhost:8081/user/deleteAll
+
+###
+GET  http://localhost:8081/course/getAll
+Content-Type: application/json 
+###
+POST  http://localhost:8081/course/deleteCourse/:63e1a67e5f24b127f8e9bade
+Content-Type: application/json 
+
+
+
