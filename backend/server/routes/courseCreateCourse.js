@@ -3,11 +3,12 @@ const router = express.Router();
 const newCourseModel = require('../models/courseModel')
 
 router.post("/createCourse", async (req, res) => { 
-  const { title, description,courseImage,content } = req.body
+  const { title, description,courseImage,content,section } = req.body
 
   const createNewCourse = newCourseModel({
     title: title,
     description: description,
+    section: section,
     courseImage: courseImage,
     content: content,
   })

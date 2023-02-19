@@ -15,7 +15,10 @@ const newCourseSchema = new mongoose.Schema(
             required: true,
             label: "description",
         },
-
+        section:{
+            type:String,
+            label:"section"
+        },
         courseImage: {
             type: Buffer,
             label: "courseImage",
@@ -27,15 +30,7 @@ const newCourseSchema = new mongoose.Schema(
         date: {
             type: Date,
             default: Date.now,
-        },
-        
-         /* use navlink to route courses to topics
-        topic:{
-            type:String,
-            required:true,
-            label:"topic",
-            
-        },*/
+        }
     },
 
     { collection: "courses" }

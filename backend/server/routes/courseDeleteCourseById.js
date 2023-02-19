@@ -2,9 +2,9 @@ const express = require('express');
 const router = express.Router();
 const newCourseModel = require('../models/courseModel');
 
-router.delete('/deleteCourseById/:id', (req, res) => {
-  var {courseId} =  req.body;
-  newCourseModel.findByIdAndDelete(courseId)
+router.delete('/deleteCourseById/:id', async (req, res) => {
+  //var {courseId} =  req.body;
+  await newCourseModel.findByIdAndDelete(req.params.id)
     .then(deletedCourse => {
       if (!deletedCourse) {
         return res.status(404).json({ message: 'Course ' + courseId+ ' not found' });

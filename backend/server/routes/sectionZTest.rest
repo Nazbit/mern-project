@@ -1,0 +1,11 @@
+//Create a Section
+###
+POST http://localhost:8081/section/createSection
+Content-Type: application/json 
+
+{
+    "title" : "Dog 3",
+    "description": "I am a testing body in .rest"
+    
+}
+###

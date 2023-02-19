@@ -4,13 +4,22 @@ import { Route, Routes } from "react-router-dom";
 
 // We import all the components we need in our app
 import Navbar from "./components/navbar";
+
+//routing components
 import LandingPage from "./components/pages/landingPage";
 import HomePage from "./components/pages/homePage";
 import Login from "./components/pages/loginPage";
 import Signup from "./components/pages/registerPage";
 import PrivateUserProfile from "./components/pages/privateUserProfilePage";
+import AllCoursesPage from "./components/pages/allCoursesPage";
+import CourseForm from "./components/pages/courseForm";
+
 import { createContext, useState, useEffect } from "react";
+
+//routing utilities
 import getUserInfo from "./utilities/decodeJwt";
+
+
 
 export const UserContext = createContext();
 //test change
@@ -20,6 +29,7 @@ const App = () => {
 
   useEffect(() => {
     setUser(getUserInfo());
+    
   }, []);
 
   return (
@@ -32,6 +42,8 @@ const App = () => {
           <Route exact path="/login" element={<Login />} />
           <Route exact path="/signup" element={<Signup />} />
           <Route path="/privateUserProfile" element={<PrivateUserProfile />} />
+          <Route path="/allCourses" element={<AllCoursesPage />} />
+          <Route path="/courseForm" element={<CourseForm />} />
         </Routes>
       </UserContext.Provider>
     </>

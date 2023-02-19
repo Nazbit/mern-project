@@ -15,6 +15,9 @@ const courseCreateCourse = require('./routes/courseCreateCourse')
 const courseDeleteCourseById = require('./routes/courseDeleteCourseById')
 const courseUpdateCourseById = require('./routes/courseUpdateCourseById')
 
+
+const sectionCreateSection = require('./routes/sectionCreateSection')
+
 require('dotenv').config();
 const SERVER_PORT = 8081
 
@@ -34,6 +37,9 @@ app.use('/course', courseGetCourseById )
 app.use('/course', courseCreateCourse )
 app.use('/course', courseDeleteCourseById )
 app.use('/course', courseUpdateCourseById )
+
+
+app.use('/section', sectionCreateSection )
 
 app.listen(SERVER_PORT, (req, res) => {
     console.log(`The backend service is running on port ${SERVER_PORT} and waiting for requests.`);

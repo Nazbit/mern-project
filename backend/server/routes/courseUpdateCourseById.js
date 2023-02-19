@@ -4,9 +4,9 @@ const z = require("zod");
 
 const newCourseModel = require("../models/courseModel");
 
-router.put('/updateCourseById/:id', (req, res) => {
-  var { courseId } = req.body;
-  newCourseModel.findByIdAndUpdate(courseId, req.body, {new: true})
+router.put('/updateCourseById/:id', async (req, res) => {
+  
+  await newCourseModel.findByIdAndUpdate(req.params.id, req.body, {new: true})
       .then(updatedCourse => {
         if (!updatedCourse) {
           return res.status(404).json({ message: 'Course not found '+courseId  });
