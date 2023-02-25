@@ -3,7 +3,7 @@ const router = express.Router();
 const newCourseModel = require('../models/courseModel');
 
 router.delete('/deleteCourseById/:id', async (req, res) => {
-  //var {courseId} =  req.body;
+
   await newCourseModel.findByIdAndDelete(req.params.id)
     .then(deletedCourse => {
       if (!deletedCourse) {

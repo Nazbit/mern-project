@@ -11,17 +11,14 @@ Content-Type: application/json
 
 //Get all courses course
 ###
-GET http://localhost:8081/course/getAll
+GET http://localhost:8081/course/getAllCourses
 Content-Type: application/json
 
 //Get course by ID
 ###
-GET http://localhost:8081/course/getCourseById
+GET http://localhost:8081/course/getCourseById/63eb3ee13998babbd1698f55
 Content-Type: application/json 
 
-{
-    "courseId" : "63eb48dc58acd693cc77d4db"
-}
 
 //Delete course by ID
 ###

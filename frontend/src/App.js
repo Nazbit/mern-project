@@ -13,6 +13,8 @@ import Signup from "./components/pages/registerPage";
 import PrivateUserProfile from "./components/pages/privateUserProfilePage";
 import AllCoursesPage from "./components/pages/allCoursesPage";
 import CourseForm from "./components/pages/courseForm";
+import SectionForm from "./components/pages/sectionForm";
+import AllSectionsPage from "./components/pages/allSectionsPage";
 
 import { createContext, useState, useEffect } from "react";
 
@@ -44,6 +46,8 @@ const App = () => {
           <Route path="/privateUserProfile" element={<PrivateUserProfile />} />
           <Route path="/allCourses" element={<AllCoursesPage />} />
           <Route path="/courseForm" element={<CourseForm />} />
+          <Route path="/sectionForm" element={<SectionForm />} />
+          <Route path="/allSectionsPage" element={<AllSectionsPage />} />
         </Routes>
       </UserContext.Provider>
     </>

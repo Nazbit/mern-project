@@ -15,8 +15,15 @@ const newSectionSchema = new mongoose.Schema(
             required: true,
             label: "description",
         },
+        courses: [
+            {
+              type: mongoose.Schema.Types.ObjectId,
+              ref: "courses",
+              label: "courses",
+            },
+        ],
     },
-
+  
 
     { collection: "sections" }
 );

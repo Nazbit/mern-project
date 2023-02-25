@@ -15,9 +15,10 @@ const newCourseSchema = new mongoose.Schema(
             required: true,
             label: "description",
         },
-        section:{
-            type:String,
-            label:"section"
+        section: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "sections",
+            label: "section",
         },
         courseImage: {
             type: Buffer,

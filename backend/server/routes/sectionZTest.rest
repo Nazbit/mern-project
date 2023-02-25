@@ -4,8 +4,60 @@ POST http://localhost:8081/section/createSection
 Content-Type: application/json 
 
 {
-    "title" : "Dog 3",
+    "title" : "Section 1",
     "description": "I am a testing body in .rest"
-    
+
 }
+
+//Create another Section
 ###
+POST http://localhost:8081/section/createSection
+Content-Type: application/json
+
+{
+"title" : "Section 2",
+"description": "I am a testing body in .rest"
+}
+
+//Get all sections
+###
+GET http://localhost:8081/section/getAllSections
+Content-Type: application/json
+//Get all courses course
+###
+GET http://localhost:8081/course/getAllCourses
+Content-Type: application/json
+
+
+//Get section by ID
+###
+GET http://localhost:8081/section/getSectionById/63f425359455457747c06734
+Content-Type: application/json
+
+
+
+//Delete section by ID
+###
+DELETE http://localhost:8081/section/deleteSectionById/63f40dd5ac6c8a2ee903027c
+Content-Type: application/json
+
+//Update a section by ID
+###
+PUT http://localhost:8081/section/updateSectionById/63f425359455457747c06734
+Content-Type: application/json
+
+{
+"title" : "Section 3",
+"description": "Still a test body in .rest"
+}
+
+//Add an existing course to a section
+###
+POST http://localhost:8081/section/sections/63f425359455457747c06734/courses/63eb3ee13998babbd1698f55
+Content-Type: application/json
+
+//Delete a course from a section without deleting the course
+###
+DELETE http://localhost:8081/section/sections/63f425359455457747c06734/courses/63eb3ee13998babbd1698f55
+
+Content-Type: application/json

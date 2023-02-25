@@ -28,6 +28,7 @@ export default function Navbar() {
           <Nav.Link href="/privateUserProfile">Profile</Nav.Link>
           <Nav.Link href="/allCourses">Courses</Nav.Link>
           <Nav.Link href="/courseForm">CourseForm</Nav.Link>
+          <Nav.Link href="/sectionForm">SectionForm</Nav.Link>
           <Dropdown>
             
             <Dropdown.Toggle variant="success" id="dropdown-basic">
@@ -47,6 +48,7 @@ export default function Navbar() {
               ))}
             </Dropdown.Menu>
           </Dropdown>
+          <Nav.Link href="/allSectionsPage">Sections</Nav.Link>
         </Nav>
       </Container >
     </ReactNavbar >
