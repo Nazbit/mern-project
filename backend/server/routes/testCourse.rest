@@ -1,0 +1,40 @@
+//Create a Course
+###
+POST http://localhost:8081/course/createCourse
+Content-Type: application/json 
+
+{
+    "title" : "Dog 7",
+    "description": "I am a testing body in .rest"
+   
+}
+
+//Get all courses course
+###
+GET http://localhost:8081/course/getAllCourses
+Content-Type: application/json
+
+//Get course by ID
+###
+GET http://localhost:8081/course/getCourseById/63eb3ee13998babbd1698f55
+Content-Type: application/json 
+
+
+//Delete course by ID
+###
+DELETE  http://localhost:8081/course/deleteCourseById/63fbd8de4542945b702a1c24
+Content-Type: application/json 
+
+
+//Update a course by ID
+###
+PUT  http://localhost:8081/course/updateCourseById/63eb40851f519f1007c89f88
+Content-Type: application/json 
+
+{
+    "title" : "Dog 10",
+    "description": "Better than Dog 4"
+}
+
+
+
