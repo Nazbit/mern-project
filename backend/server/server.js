@@ -23,6 +23,14 @@ const sectionUpdateSectionById = require('./routes/sectionUpdateSectionById')
 const sectionAddCourseToSection = require('./routes/sectionAddCourseToSection')
 const sectionDeleteCourseFromSection = require('./routes/sectionDeleteCourseFromSection')
 
+const quizGetAllQuizzes = require('./routes/quizGetAllQuizzes')
+const quizGetQuizById = require('./routes/quizGetQuizById')
+const quizCreateQuiz = require('./routes/quizCreateQuiz')
+const quizDeleteQuizById = require('./routes/quizDeleteQuizById')
+const quizUpdateQuizById = require('./routes/quizUpdateQuizById')
+const quizAddQuizToCourse = require('./routes/quizAddQuizToCourse')
+const quizDeleteQuizFromCourse = require('./routes/quizDeleteQuizFromCourse')
+
 
 require('dotenv').config();
 const SERVER_PORT = 8081
@@ -52,6 +60,14 @@ app.use('/section', sectionDeleteSectionById )
 app.use('/section', sectionUpdateSectionById )
 app.use('/section', sectionAddCourseToSection )
 app.use('/section', sectionDeleteCourseFromSection )
+
+app.use('/quiz', quizGetAllQuizzes )
+app.use('/quiz', quizGetQuizById )
+app.use('/quiz', quizCreateQuiz )
+app.use('/quiz', quizDeleteQuizById )
+app.use('/quiz', quizUpdateQuizById )
+app.use('/quiz', quizAddQuizToCourse )
+app.use('/quiz', quizDeleteQuizFromCourse )
 
 app.listen(SERVER_PORT, (req, res) => {
     console.log(`The backend service is running on port ${SERVER_PORT} and waiting for requests.`);

@@ -31,7 +31,14 @@ const newCourseSchema = new mongoose.Schema(
         date: {
             type: Date,
             default: Date.now,
-        }
+        },
+        quizzes: [
+            {
+              type: mongoose.Schema.Types.ObjectId,
+              ref: "quizzes",
+              label: "quizzes",
+            },
+        ],
     },
 
     { collection: "courses" }

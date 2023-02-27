@@ -15,6 +15,7 @@ import AllCoursesPage from "./components/pages/allCoursesPage";
 import CourseForm from "./components/pages/courseForm";
 import SectionForm from "./components/pages/sectionForm";
 import AllSectionsPage from "./components/pages/allSectionsPage";
+import QuizForm from "./components/pages/quizForm";
 
 import { createContext, useState, useEffect } from "react";
 
@@ -46,6 +47,7 @@ const App = () => {
           <Route path="/privateUserProfile" element={<PrivateUserProfile />} />
           <Route path="/allCourses" element={<AllCoursesPage />} />
           <Route path="/courseForm" element={<CourseForm />} />
+          <Route path="/quizForm" element={<QuizForm />} />
           <Route path="/sectionForm" element={<SectionForm />} />
           <Route path="/allSectionsPage" element={<AllSectionsPage />} />
         </Routes>
