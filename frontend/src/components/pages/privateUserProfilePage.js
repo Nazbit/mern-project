@@ -19,6 +19,7 @@ const PrivateUserProfile = () => {
   // handle logout button
   const handleLogout = (async) => {
     localStorage.clear();
+    window.location.reload()
     navigate("/");
   };
 

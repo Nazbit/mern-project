@@ -16,6 +16,13 @@ import CourseForm from "./components/pages/courseForm";
 import SectionForm from "./components/pages/sectionForm";
 import AllSectionsPage from "./components/pages/allSectionsPage";
 import QuizForm from "./components/pages/quizForm";
+import TakeQuiz from "./components/pages/takeQuiz";
+import QuizPage from "./components/pages/quizPage";
+import CoursePage from "./components/pages/coursePage";
+import FormsPage from "./components/pages/formsPage";
+import EditUserPage from "./components/pages/editUserPage";
+import UpdateCoursePage from "./components/pages/updateCoursePage";
+
 
 import { createContext, useState, useEffect } from "react";
 
@@ -50,6 +57,16 @@ const App = () => {
           <Route path="/quizForm" element={<QuizForm />} />
           <Route path="/sectionForm" element={<SectionForm />} />
           <Route path="/allSectionsPage" element={<AllSectionsPage />} />
+          <Route path="/takeQuiz/:quizId" element={<TakeQuiz />} />
+          <Route path="/quizPage" element={<QuizPage />} />
+          <Route path="/coursePage/:courseId" element={<CoursePage />} />
+          <Route path="/formsPage" element={<FormsPage />} />
+          <Route path="/editUser" element={<EditUserPage />} />
+          <Route path="/updateCoursePage/:courseId" element={<UpdateCoursePage />} />
+          
+          
+          
+          
         </Routes>
       </UserContext.Provider>
     </>

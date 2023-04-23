@@ -1,0 +1,71 @@
+//Create a question
+POST http://localhost:8081/question/createQuestion
+Content-Type: application/json 
+
+{
+    "questionText": "question?",
+    "options": ["Paris", "Berlin", "London"],
+    "correctAnswer": 1,
+    "explanation": "Paris is the capital of France, and Yen is the currency of Japan"
+}
+
+ 
+
+//Create another question
+###
+POST http://localhost:8081/question/createQuestion
+Content-Type: application/json
+
+{
+"title" : "Quiz 2",
+    "questions": [],
+    "options":[],
+    "correctAnswers": [],
+    "explanation": "No"
+}
+
+//Get all questions
+###
+GET http://localhost:8081/question/getAllQuestions
+Content-Type: application/json
+//Get all quizzes 
+###
+GET http://localhost:8081/quiz/getAllQuizzes
+Content-Type: application/json
+
+//Delete quiz by ID
+###
+DELETE http://localhost:8081/quiz/deleteQuizById/6414fda5e1cb434f04ba3316
+Content-Type: application/json
+//Delete question by ID
+###
+DELETE http://localhost:8081/question/deleteQuestionById/64194dcff12e54f9457ea6ed
+Content-Type: application/json
+
+//Get question by ID
+###
+GET http://localhost:8081/question/getQuestionById/6415f94c7a6f3ec226a8582a
+Content-Type: application/json
+
+//Update a question by ID
+###
+PUT http://localhost:8081/question/updateQuestionById/6419c984ee8b2a3fea23572d
+Content-Type: application/json
+
+{
+    "questionText": "question2?",
+    "options": ["Paris2", "Berlin", "London"],
+    "correctAnswer": 2,
+    "explanation": "Paris2 is the capital of France, and Yen is the currency of Japan"
+}
+
+//Add an existing question to a quiz
+###
+POST http://localhost:8081/question/quizzes/63fbbe369750dec3338e51c4/questions/63fbbe2f9750dec3338e51c2
+Content-Type: application/json
+
+//Delete a question from a quiz without deleting the question
+###
+DELETE http://localhost:8081/questions/quizzes/63fba3ff5a5251beee2f9313/questions/63fba2e65a5251beee2f9303
+
+Content-Type: application/json

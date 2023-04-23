@@ -1,36 +1,50 @@
 const express = require("express");
 const app = express();
+
+
 const cors = require('cors')
-const loginRoute = require('./routes/userLogin')
-const getAllUsersRoute = require('./routes/userGetAllUsers')
-const registerRoute = require('./routes/userSignUp')
-const getUserByIdRoute = require('./routes/userGetUserById')
+
+const loginRoute = require('./routes/user/userLogin')
+const getAllUsersRoute = require('./routes/user/userGetAllUsers')
+const registerRoute = require('./routes/user/userSignUp')
+const getUserByIdRoute = require('./routes/user/userGetUserById')
 const dbConnection = require('./config/db.config')
-const editUser = require('./routes/userEditUser')
-const deleteUser = require('./routes/userDeleteAll')
+const editUser = require('./routes/user/userEditUser')
+const deleteUser = require('./routes/user/userDeleteAll')
+const userIsAdmin = require('./routes/user/userIsAdmin')
 
-const courseGetAllCourses = require('./routes/courseGetAllCourses')
-const courseGetCourseById = require('./routes/courseGetCourseById')
-const courseCreateCourse = require('./routes/courseCreateCourse')
-const courseDeleteCourseById = require('./routes/courseDeleteCourseById')
-const courseUpdateCourseById = require('./routes/courseUpdateCourseById')
 
-const sectionGetAllSections = require('./routes/sectionGetAllSections')
-const sectionGetSectionById = require('./routes/sectionGetSectionById')
-const sectionCreateSection = require('./routes/sectionCreateSection')
-const sectionDeleteSectionById = require('./routes/sectionDeleteSectionById')
-const sectionUpdateSectionById = require('./routes/sectionUpdateSectionById')
-const sectionAddCourseToSection = require('./routes/sectionAddCourseToSection')
-const sectionDeleteCourseFromSection = require('./routes/sectionDeleteCourseFromSection')
+const getAllCourses = require('./routes/course/getAllCourses')
+const getCourseById = require('./routes/course/getCourseById')
+const createCourse = require('./routes/course/createCourse')
+const deleteCourseById = require('./routes/course/deleteCourseById')
+const updateCourseById = require('./routes/course/updateCourseById')
 
-const quizGetAllQuizzes = require('./routes/quizGetAllQuizzes')
-const quizGetQuizById = require('./routes/quizGetQuizById')
-const quizCreateQuiz = require('./routes/quizCreateQuiz')
-const quizDeleteQuizById = require('./routes/quizDeleteQuizById')
-const quizUpdateQuizById = require('./routes/quizUpdateQuizById')
-const quizAddQuizToCourse = require('./routes/quizAddQuizToCourse')
-const quizDeleteQuizFromCourse = require('./routes/quizDeleteQuizFromCourse')
+const getAllSections = require('./routes/section/getAllSections')
+const getSectionById = require('./routes/section/getSectionById')
+const createSection = require('./routes/section/createSection')
+const deleteSectionById = require('./routes/section/deleteSectionById')
+const updateSectionById = require('./routes/section/updateSectionById')
+const addCourseToSection = require('./routes/section/addCourseToSection')
 
+
+const getAllQuizzes = require('./routes/quiz/getAllQuizzes')
+const getQuizById = require('./routes/quiz/getQuizById')
+const createQuiz = require('./routes/quiz/createQuiz')
+const deleteQuizById = require('./routes/quiz/deleteQuizById')
+const updateQuizById = require('./routes/quiz/updateQuizById')
+const addQuizToCourse = require('./routes/quiz/addQuizToCourse')
+const deleteQuizFromCourse = require('./routes/quiz/deleteQuizFromCourse')
+const submitQuiz = require('./routes/quiz/submitQuiz')
+
+
+const getAllQuestions = require('./routes/question/getAllQuestions')
+const getQuestionById = require('./routes/question/getQuestionById')
+const createQuestion = require('./routes/question/createQuestion')
+const deleteQuestionById = require('./routes/question/deleteQuestionById')
+const updateQuestionById = require('./routes/question/updateQuestionById')
+const addQuestionToQuiz = require('./routes/question/addQuestionToQuiz')
+const deleteQuestionFromQuiz = require('./routes/question/deleteQuestionFromQuiz')
 
 require('dotenv').config();
 const SERVER_PORT = 8081
@@ -45,29 +59,40 @@ app.use('/user', getAllUsersRoute)
 app.use('/user', getUserByIdRoute)
 app.use('/user', editUser)
 app.use('/user', deleteUser)
-
-app.use('/course', courseGetAllCourses )
-app.use('/course', courseGetCourseById )
-app.use('/course', courseCreateCourse )
-app.use('/course', courseDeleteCourseById )
-app.use('/course', courseUpdateCourseById )
+app.use('/user', userIsAdmin)
 
 
-app.use('/section', sectionGetAllSections )
-app.use('/section', sectionGetSectionById )
-app.use('/section', sectionCreateSection )
-app.use('/section', sectionDeleteSectionById )
-app.use('/section', sectionUpdateSectionById )
-app.use('/section', sectionAddCourseToSection )
-app.use('/section', sectionDeleteCourseFromSection )
+app.use('/course', getAllCourses )
+app.use('/course', getCourseById )
+app.use('/course', createCourse )
+app.use('/course', deleteCourseById )
+app.use('/course', updateCourseById )
 
-app.use('/quiz', quizGetAllQuizzes )
-app.use('/quiz', quizGetQuizById )
-app.use('/quiz', quizCreateQuiz )
-app.use('/quiz', quizDeleteQuizById )
-app.use('/quiz', quizUpdateQuizById )
-app.use('/quiz', quizAddQuizToCourse )
-app.use('/quiz', quizDeleteQuizFromCourse )
+
+app.use('/section', getAllSections )
+app.use('/section', getSectionById )
+app.use('/section', createSection )
+app.use('/section', deleteSectionById )
+app.use('/section', updateSectionById )
+app.use('/section', addCourseToSection )
+
+
+app.use('/quiz', getAllQuizzes )
+app.use('/quiz', getQuizById )
+app.use('/quiz', createQuiz )
+app.use('/quiz', deleteQuizById )
+app.use('/quiz', updateQuizById )
+app.use('/quiz', addQuizToCourse )
+app.use('/quiz', deleteQuizFromCourse )
+app.use('/quiz', submitQuiz )
+
+app.use('/question', getAllQuestions )
+app.use('/question', getQuestionById )
+app.use('/question', createQuestion )
+app.use('/question', deleteQuestionById )
+app.use('/question', updateQuestionById )
+app.use('/question', addQuestionToQuiz )
+app.use('/question', deleteQuestionFromQuiz )
 
 app.listen(SERVER_PORT, (req, res) => {
     console.log(`The backend service is running on port ${SERVER_PORT} and waiting for requests.`);

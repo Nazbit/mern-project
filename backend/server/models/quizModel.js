@@ -9,26 +9,6 @@ const quizSchema = new mongoose.Schema(
       minlength: 3,
       trim: true
     },
-    questions: [
-      {
-        type: String,
-        required: true
-      }
-    ],
-    options: [
-      [
-        {
-          type: String,
-          required: true
-        }
-      ]
-    ],
-    correctAnswers: [
-      {
-        type: Number,
-        required: true
-      }
-    ],
     explanation: {
       type: String,
       required: true,
@@ -42,7 +22,11 @@ const quizSchema = new mongoose.Schema(
     date: {
       type: Date,
       default: Date.now
-    }
+    },
+    questions: [{
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'question'
+    }],
   },
   { collection: "quizzes" }
 );

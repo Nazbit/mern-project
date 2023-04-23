@@ -1,0 +1,38 @@
+.forms-page .table-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 30vh;
+}
+
+
+.forms-page table {
+  border-collapse: collapse;
+  margin-top: 20px;
+  border-style: groove;
+  align-items: center;
+  width: 90%;
+  font-weight: bold;
+}
+
+.forms-page td {
+  padding: 10px;
+  border: 3px solid black;
+  text-align: center;
+}
+
+.forms-page h1 {
+  margin-top: 30px;
+  text-align: center;
+}
+
+
+.forms-page td:first-child {
+  text-align: left;
+}
+
+.forms-page button {
+  margin-top: 10px;
+  width: 80%;
+}

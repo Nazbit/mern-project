@@ -3,52 +3,58 @@ import getUserInfo from '../utilities/decodeJwt';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import ReactNavbar from 'react-bootstrap/Navbar';
-import Dropdown from 'react-bootstrap/Dropdown';
-import CourseService from "../utilities/CourseService";
+import NavDropdown from 'react-bootstrap/NavDropdown';
+import { NavLink } from "react-router-dom";
+
 
 export default function Navbar() {
-  const [user, setUser] = useState({})
-  const [courses, setCourses] = useState([]);
+  const [user, setUser] = useState(null);
 
   useEffect(() => {
     setUser(getUserInfo());
-    async function fetchCourses() {
-      const response = await CourseService.getAllCourses();
-      setCourses(response);
-    }
-    fetchCourses();
   }, []);
+
+  if (!user) {
+    return (
+      <ReactNavbar bg="dark" variant="dark">
+        <Container>
+          <Nav className="me-auto">
+            <div style={{backgroundColor: "#8BC34A", padding: "1px", borderRadius: "4px"}}>
+              <Nav.Link href="/" style={{color: "white"}}>Get Started</Nav.Link>
+            </div>
+            <Nav.Link href="/home">Home</Nav.Link>
+            <Nav.Link href="/privateUserProfile">Profile</Nav.Link>
+            <Nav.Link href="/allSectionsPage">Sections</Nav.Link>
+            <Nav.Link href="/allCourses">Courses</Nav.Link>
+            <Nav.Link href="/quizPage">Quizzes</Nav.Link> 
+          </Nav>
+          <Nav>
+            <>
+              <Nav.Link href="/signup">Sign Up</Nav.Link>
+              <Nav.Link href="/login">Log In</Nav.Link>
+            </>
+          </Nav>
+        </Container >
+      </ReactNavbar >
+    );
+  }
 
   return (
     <ReactNavbar bg="dark" variant="dark">
       <Container>
         <Nav className="me-auto">
-          <Nav.Link href="/">Start</Nav.Link>
           <Nav.Link href="/home">Home</Nav.Link>
           <Nav.Link href="/privateUserProfile">Profile</Nav.Link>
-          <Nav.Link href="/allCourses">Courses</Nav.Link>
-          <Nav.Link href="/courseForm">CourseForm</Nav.Link>
-          <Nav.Link href="/sectionForm">SectionForm</Nav.Link>
-          <Dropdown>
-            
-            <Dropdown.Toggle variant="success" id="dropdown-basic">
-              Courses Dropdown
-            </Dropdown.Toggle>
-            <Dropdown.Menu>
-            <Dropdown.Toggle variant="success" id="dropdown-basic">
-                SubsectionTest
-              </Dropdown.Toggle>
-              <Dropdown.Menu>
-              {courses.map(course => (
-                <Dropdown.Item key={course.id} href={`/course/${course.title}`}>Course In SubsectionTest {course.title}</Dropdown.Item>
-              ))}
-              </Dropdown.Menu>
-              {courses.map(course => (
-                <Dropdown.Item key={course.id} href={`/course/${course.title}`}>{course.title}</Dropdown.Item>
-              ))}
-            </Dropdown.Menu>
-          </Dropdown>
           <Nav.Link href="/allSectionsPage">Sections</Nav.Link>
+          <Nav.Link href="/allCourses">Courses</Nav.Link>
+          <Nav.Link href="/quizPage">Quizzes</Nav.Link> 
+          {user.isAdmin && <NavLink to="/formsPage" className="nav-link">Forms</NavLink>}
+        </Nav>
+        <Nav>
+          <NavDropdown title={`@${user.username}`} id="basic-nav-dropdown">
+            <NavDropdown.Item href="/privateUserProfile">Profile</NavDropdown.Item>
+            <NavDropdown.Item href="/" onClick={() => localStorage.removeItem('accessToken')}>Log Out</NavDropdown.Item>
+          </NavDropdown>
         </Nav>
       </Container >
     </ReactNavbar >

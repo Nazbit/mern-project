@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 
 function SectionForm() {
@@ -26,20 +25,18 @@ function SectionForm() {
   };
 
   return (
-    <div>
+    <div className="container">
       <h1>Create Section</h1>
       <form onSubmit={handleSubmit}>
-        <label>
-          Title:
-          <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} required />
-        </label>
-        <br />
-        <label>
-          Description:
-          <textarea value={description} onChange={(e) => setDescription(e.target.value)} required />
-        </label>
-        <br />
-        <button type="submit">Submit</button>
+        <div className="form-group">
+          <label>Title:</label>
+          <input type="text" className="form-control" value={title} onChange={(e) => setTitle(e.target.value)} required />
+        </div>
+        <div className="form-group">
+          <label>Description:</label>
+          <textarea className="form-control" value={description} onChange={(e) => setDescription(e.target.value)} required />
+        </div>
+        <button type="submit" className="btn btn-primary">Submit</button>
       </form>
     </div>
   );
