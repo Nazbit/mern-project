@@ -1,0 +1,13 @@
+
+
+###
+POST http://localhost:8081/user/signup
+Content-Type: application/json
+
+{
+    "username" : "Usernamesss",
+    "email" : "email@gmail.com",
+    "password": "$2b$10$0oMzBJvw3poxGfNkPVaOmO5o2UqmaD09tOg.ZuXVaXFyJdznQCekS"
+    
+
+}

@@ -41,7 +41,7 @@ const AllSectionsPage = () => {
 
     return (
         <Container>
-            <h2>All Sections</h2>
+            <h2>All Modules</h2>
             <Row>
                 {sections.map((section, index) => (
                     <Col md={6} key={index}>
@@ -58,7 +58,7 @@ const AllSectionsPage = () => {
                                     </li>
                                 ))}
                             </ul>
-                            <Button className="btn btn-danger ml-2" onClick={() => handleDeleteSection(section._id)}>Delete Section</Button>
+                            <Button className="btn btn-danger ml-2" onClick={() => handleDeleteSection(section._id)}>Delete Module</Button>
                         </div>
                     </Col>
                 ))}

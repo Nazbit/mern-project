@@ -23,12 +23,10 @@ const newUserSchema = new mongoose.Schema(
       {
         quizId: {
           type: mongoose.Schema.Types.ObjectId,
-          ref: "quizzes",
-          required: true,
+          
         },
         score: {
           type: Number,
-          required: true,
         },
       },
     ],

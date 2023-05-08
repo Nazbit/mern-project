@@ -14,15 +14,6 @@ router.delete('/deleteQuizById/:id', async (req, res) => {
     // Find all questions that reference the deleted quiz
     const affectedQuestions = await newQuestionModel.find({ quiz: deletedQuiz._id });
 
-    // Update each affected question to set the quiz field to null
-    const updates = affectedQuestions.map(question => {
-      question.quiz = null;
-      return question.save();
-    });
-
-    // Wait for all updates to complete
-    await Promise.all(updates);
-
     // Remove the quiz from the course's "quizzes" array
     const courseId = deletedQuiz.course;
     await newCourseModel.findByIdAndUpdate(courseId, { $pull: { quizzes: deletedQuiz._id } });

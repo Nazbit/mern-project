@@ -26,6 +26,7 @@ router.post('/editUser', async (req, res) =>
     // parse the generated hash into the password
     const hashPassword = await bcrypt.hash(password, generateHash)
 
+    
     // find and update user using stored information
     newUserModel.findByIdAndUpdate(userId, {
         username : username, 

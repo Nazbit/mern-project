@@ -5,13 +5,16 @@ const app = express();
 const cors = require('cors')
 
 const loginRoute = require('./routes/user/userLogin')
-const getAllUsersRoute = require('./routes/user/userGetAllUsers')
-const registerRoute = require('./routes/user/userSignUp')
-const getUserByIdRoute = require('./routes/user/userGetUserById')
+const registerRoute = require('./routes/user/userSignup')
+const getAllUsersRoute = require('./routes/user/getAllUsers')
+const getUserByIdRoute = require('./routes/user/getUserById')
 const dbConnection = require('./config/db.config')
-const editUser = require('./routes/user/userEditUser')
-const deleteUser = require('./routes/user/userDeleteAll')
-const userIsAdmin = require('./routes/user/userIsAdmin')
+const editUser = require('./routes/user/editUser')
+const deleteUser = require('./routes/user/deleteAll')
+const isAdmin = require('./routes/user/isAdmin')
+const updateQuizScore = require('./routes/user/updateQuizScore')
+
+
 
 
 const getAllCourses = require('./routes/course/getAllCourses')
@@ -59,7 +62,8 @@ app.use('/user', getAllUsersRoute)
 app.use('/user', getUserByIdRoute)
 app.use('/user', editUser)
 app.use('/user', deleteUser)
-app.use('/user', userIsAdmin)
+app.use('/user', isAdmin)
+app.use('/user', updateQuizScore)
 
 
 app.use('/course', getAllCourses )

@@ -71,14 +71,14 @@ function CourseForm() {
           />
         </div>
         <div className="form-group">
-          <label htmlFor="section">Section:</label>
+          <label htmlFor="section">Module:</label>
           <select
             className="form-control"
             id="section"
             value={section}
             onChange={(e) => setSection(e.target.value)}
           >
-            <option value="">Select a section</option>
+            <option value="">Select a Module</option>
             {sections.map((section) => (
               <option key={section._id} value={section._id}>
                 {section.title}

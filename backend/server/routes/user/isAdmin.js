@@ -3,7 +3,7 @@ const router = express.Router();
 const User = require('../../models/userModel')
 
 // route to check if a user is an admin
-router.get('/userIsAdmin/:userId', async (req, res) => {
+router.get('/isAdmin/:userId', async (req, res) => {
   try {
     const user = await User.findById(req.params.userId);
     if (!user) {

@@ -24,7 +24,7 @@ export default function Navbar() {
             </div>
             <Nav.Link href="/home">Home</Nav.Link>
             <Nav.Link href="/privateUserProfile">Profile</Nav.Link>
-            <Nav.Link href="/allSectionsPage">Sections</Nav.Link>
+            <Nav.Link href="/allSectionsPage">Modules</Nav.Link>
             <Nav.Link href="/allCourses">Courses</Nav.Link>
             <Nav.Link href="/quizPage">Quizzes</Nav.Link> 
           </Nav>
@@ -45,7 +45,7 @@ export default function Navbar() {
         <Nav className="me-auto">
           <Nav.Link href="/home">Home</Nav.Link>
           <Nav.Link href="/privateUserProfile">Profile</Nav.Link>
-          <Nav.Link href="/allSectionsPage">Sections</Nav.Link>
+          <Nav.Link href="/allSectionsPage">Modules</Nav.Link>
           <Nav.Link href="/allCourses">Courses</Nav.Link>
           <Nav.Link href="/quizPage">Quizzes</Nav.Link> 
           {user.isAdmin && <NavLink to="/formsPage" className="nav-link">Forms</NavLink>}

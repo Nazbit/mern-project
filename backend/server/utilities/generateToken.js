@@ -8,7 +8,8 @@ const generateAccessToken = (res, userId, email, username, password, isAdmin, da
     const token = jwt.sign({id: userId, email, username, password, isAdmin, date, exp: expirationTimeInSeconds}, process.env.ACCESS_TOKEN_SECRET);
     
     // Set token as an HttpOnly cookie
-    res.cookie('access_token', token, { httpOnly: true, maxAge: 60 * 1000 }); // Expires in 1 minute
+    //res.cookie('access_token', token, { httpOnly: true, maxAge: 60 * 1000 }); // Expires in 1 minute
+    res.cookie('access_token', token, { httpOnly: true, maxAge: 600 * 1000 }); // Expires in 10 minute
     
     // Return token
     return token;

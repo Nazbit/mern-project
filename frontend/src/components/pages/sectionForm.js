@@ -26,7 +26,7 @@ function SectionForm() {
 
   return (
     <div className="container">
-      <h1>Create Section</h1>
+      <h1>Create Module</h1>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
           <label>Title:</label>

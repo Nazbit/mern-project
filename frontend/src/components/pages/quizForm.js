@@ -56,7 +56,7 @@ const QuizForm = ({ handleSubmit, onCancel, initialValues }) => {
   const handleFormSubmit = async (e) => {
     e.preventDefault();
     try {
-      const courseId=course;
+      const courseId = course;
       // Create quiz
       const quizData = {
         title: title,
@@ -80,7 +80,7 @@ const QuizForm = ({ handleSubmit, onCancel, initialValues }) => {
         options: question.options,
         correctAnswer: question.correctAnswer,
       }));
-       questionsData.map(async (questionData) => {
+      questionsData.map(async (questionData) => {
         const res = await axios.post(
           "http://localhost:8081/question/createQuestion",
           questionData
@@ -149,12 +149,12 @@ const QuizForm = ({ handleSubmit, onCancel, initialValues }) => {
               </Col>
               <Col>
                 <Form.Label>Correct Answer:</Form.Label>
-                <Form.Control as="select" value={question.correctAnswer} onChange={(e) => handleCorrectAnswerChange(index, e.target.value)} required>
+                <Form.Control as="select" value={null} onChange={(e) => handleCorrectAnswerChange(index, e.target.value)} required>
                   <option value="">Select an answer</option>
-                  <option value="1">Option 1</option>
-                  <option value="2">Option 2</option>
-                  <option value="3">Option 3</option>
-                  <option value="4">Option 4</option>
+                  <option value="0">Option 1</option>
+                  <option value="1">Option 2</option>
+                  <option value="2">Option 3</option>
+                  <option value="3">Option 4</option>
                 </Form.Control>
               </Col>
             </Row>

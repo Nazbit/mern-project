@@ -40,7 +40,7 @@ const CoursePage = () => {
               <Card.Body>
                 <Card.Title>{courseDetails.title}</Card.Title>
                 <Card.Text>{courseDetails.description}</Card.Text>
-                <Card.Text>Section: {sectionDetails ? sectionDetails.title : <Spinner animation="border" size="sm" />}</Card.Text>
+                <Card.Text>Module: {sectionDetails ? sectionDetails.title : <Spinner animation="border" size="sm" />}</Card.Text>
                 <Card.Text>{courseDetails.content}</Card.Text>
                 <Card.Text>Date: {new Date(courseDetails.date).toLocaleString()}</Card.Text>
                 {courseDetails.quizzes.length > 0 ? (

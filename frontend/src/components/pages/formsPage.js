@@ -18,7 +18,7 @@ const FormsPage = () => {
             </td>
           </tr>
           <tr>
-            <td>Section Form</td>
+            <td>Module Form</td>
             <td>
               <NavLink to="/sectionForm">
                 <Button variant="secondary">Go</Button>
