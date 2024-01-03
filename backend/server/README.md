@@ -8,6 +8,3 @@ copy & paste ( in terminal ) :
 - cd client
 - npm install
 - npm start
-
-### Disclaimer : pushing your .env file IS NOT safe. It is done here to simplify the start up process
-### To use the 'test.rest' file, install Rest Client (vsCode Extension) or just use boring postman🫥
