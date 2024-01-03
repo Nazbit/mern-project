@@ -1,18 +1,16 @@
-# mern-user-skeleton
-This MERN stack implementation creates a small web application that lets users register, login, view a home page, and logout. 
+# MERN E-Learning Platform
+Introduction
+Welcome to our MERN E-Learning Platform! This application is a robust and dynamic e-learning platform that offers a wide range of functionalities for educational purposes. Built using the MERN stack (MongoDB, Express.js, React, Node.js), it provides a seamless experience for managing and participating in online education.
 
-Configuration
--------------
-Under users/server/create .env file that looks similar to this:
-DB_URL = mongodb+srv://admin:<your admin password>@cluster<some  number>.<some unique id>.mongodb.net/<some database name>
-ACCESS_TOKEN_SECRET = {AccessToken}
-To do this, you need to create an MongoDB Atlas account, a collection, and a database.
+Features
+---------
+Dynamic Course Management: Admin users can easily add, delete, and edit classes, quizzes, and modules.
 
-The DB_URL comes from signing up for an MongoDB Atlas account and creating a cluster.  Under database select the cluster (likely
-cluster0 if it is your first one) and select Connect. Select connect your application, driver=Node.js.  You will see
-the database connection string in this window.
+Quiz Functionality: Users can take quizzes, and the platform tracks and displays their most recent scores.
 
-Generate a unique JWT access token for ACCESS_TOKEN_SECRET
+Maintenance Tickets: Users can submit tickets for platform issues, which can be managed by administrators.
+
+User Authentication and Authorization: Secure login system with different access levels for administrators and regular users.
 
 Start Up
 ---------
